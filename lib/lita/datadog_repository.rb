@@ -7,7 +7,7 @@ module Lita
     end
 
     def submit(metric_name, opts)
-      @Datadog_client.emit_points(metric_name, opts)
+      @Datadog_client.emit_event(metric_name, opts)
     end
   end
 end
