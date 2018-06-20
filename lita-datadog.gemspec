@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = "lita-datadog"
-  spec.version = "0.1.0"
+  spec.version = "0.1.1"
   spec.summary = "Lita handler for interacting with datadoghq.com, a hosted monitoring / analytics app"
   spec.description = "Lita handler for interacting with datadoghq.com, a hosted monitoring / analytics app"
   spec.license = "MIT"
