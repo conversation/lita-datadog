@@ -17,6 +17,7 @@ module Lita
     class Datadog < Handler
 
       config :api_key
+      config :app_key
 
       on :datadog_submit, :handle_datadog_submit
 
@@ -36,7 +37,7 @@ module Lita
       end
 
       def datadog_repository
-        @datadog_repository ||= DatadogRepository.new(config.api_key)
+        @datadog_repository ||= DatadogRepository.new(config.api_key, config.app_key)
       end
 
     end
