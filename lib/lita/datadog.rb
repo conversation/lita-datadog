@@ -17,6 +17,7 @@ module Lita
     class Datadog < Handler
 
       config :api_key
+      config :app_key
 
       on :datadog_submit, :handle_datadog_submit
 
@@ -32,11 +33,11 @@ module Lita
         raise ArgumentError, "datadog_submit event must include key :value" unless value
 
         puts "datadog event. name=#{name} type=#{type} host=#{host} value=#{value}"
-        datadog_repository.submit(name.to_s, type: type.to_sym, value: value, host: host.to_s)
+        datadog_repository.submit(name.to_s, {type: type.to_sym, value: value, host: host.to_s})
       end
 
       def datadog_repository
-        @datadog_repository ||= DatadogRepository.new(config.api_key)
+        @datadog_repository ||= DatadogRepository.new(config.api_key, config.app_key)
       end
 
     end
