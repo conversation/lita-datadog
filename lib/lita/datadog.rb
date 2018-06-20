@@ -32,7 +32,7 @@ module Lita
         raise ArgumentError, "datadog_submit event must include key :value" unless value
 
         puts "datadog event. name=#{name} type=#{type} host=#{host} value=#{value}"
-        datadog_repository.submit(name.to_s, value.to_s, type: type.to_sym, host: host.to_s)
+        datadog_repository.submit(name.to_s, value.to_s, type: type.to_s, host: host.to_s)
       end
 
       def datadog_repository
