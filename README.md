@@ -35,7 +35,7 @@ documentation for more details.
       def datadog_test(response)
         data = {
           name: "ci.job-runtime.#{event.pipeline_slug}.#{event.job_slug}",
-          type: :guage,
+          type: :gauge,
           host: event.agent_hostname,
           value: 2
         }
