@@ -21,7 +21,7 @@ Add the following to your lita_config.rb file:
 To submit data, emit an event on the lita eventbus. Each event must have four attributes:
 
 * name - a string that defines the metric name
-* type - :gauge or :counter
+* type - "gauge" or "counter"
 * host - a string that describes the data host. Often a hostname
 * value - a number
 
@@ -35,7 +35,7 @@ documentation for more details.
       def datadog_test(response)
         data = {
           name: "ci.job-runtime.#{event.pipeline_slug}.#{event.job_slug}",
-          type: :gauge,
+          type: "gauge",
           host: event.agent_hostname,
           value: 2
         }
